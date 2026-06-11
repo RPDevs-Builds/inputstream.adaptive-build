@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: xbmc/inputstream.adaptive
-          ref: ${{ matrix.branch == 'Piers' && 'master' || 'Omega' }}
+          ref: ${{ matrix.branch == 'Piers' && ('inputstream.adaptive' == 'inputstream.ffmpegdirect' || 'inputstream.adaptive' == 'inputstream.adaptive') && 'Piers' || (matrix.branch == 'Piers' && 'master' || 'Omega') }}
           path: source/inputstream.adaptive
           fetch-depth: 1
 
